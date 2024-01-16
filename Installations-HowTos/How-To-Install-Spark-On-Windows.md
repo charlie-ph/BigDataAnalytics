@@ -12,6 +12,8 @@ Following are step-by-step instructions for putting together all the components:
 
 ## Step 1: Java Installation
 
+Important NOTE: Do NOT Use Java 16. Other Java version existing on your system should work fine and you don't have to reinstall
+
 If you do not already have Java installed on your machine, then you can download it from here: https://oracle.com/java/technologies/downloads/#jdk21-windows
 
 Once the installation is complete, we need to verify the installation. Fire up windows command prompt and type in the following command:
@@ -128,13 +130,13 @@ Enter Ctrl+Z to close the spark session.
 Now Let us configure the spark-env to use python3.
 Create a new file named 'spark-env.cmd' in the 'C:\ProgramData\spark\spark-3.5.0-bin-hadoop3\conf' and add following lines so that spark-submit will use python3 (please modify to relevant path as per your system)
 ```
-set PYSPARK_PYTHON=C:\Users\sande\anaconda3\python.exe
-set PYSPARK_DRIVER_PYTHON=C:\Users\sande\anaconda3\python.exe
+set PYSPARK_PYTHON=C:\Users\your-username\anaconda3\python.exe
+set PYSPARK_DRIVER_PYTHON=C:\Users\your-username\anaconda3\python.exe
 ```
 Now close the file and save it.
 
 So, our installation is good, now let's create PySpark script in python and see how we can execute it on spark.
-  * First, let us create a simple python script ```TestPySpark.py``` that will just print some details about the spark instance. You can save this file at a path of your choice. For this example, I have the file stored at ```C:\Users\sande\SubrDocuments\CS777```<br/>
+  * First, let us create a simple python script ```TestPySpark.py``` that will just print some details about the spark instance. You can save this file at a path of your choice. For this example, I have the file stored at ```C:\Users\your-username\Documents\CS777```<br/>
   ```python
   import sys
   from pyspark import SparkContext
@@ -154,7 +156,7 @@ So, our installation is good, now let's create PySpark script in python and see 
   ```
   * Next, run the python script using the following commands (*using appropriate path on your computer*) in the **Anaconda Prompt**:
   ```
-  cd C:\Users\sande\Documents\CS777
+  cd C:\Users\your-username\Documents\CS777
   spark-submit TestPySpark.py
   ```
   If there are no problems, you should see the following output:
@@ -187,7 +189,7 @@ So, our installation is good, now let's create PySpark script in python and see 
 Setting up jupyter notebook for pyspark is quite simple. Just add the following system environment variables:
 ```PYSPARK_DRIVER_PYTHON``` set to ```jupyter```<br/>
 ```PYSPARK_DRIVER_PYTHON_OPTS``` set to ```notebook```<br/>
-To check that we can use spark with jupyter notebook, let's create a simple notebook ```TestPySparkJupyterNotebook``` in the folder ```C:\Users\sande\Documents\CS777```. Update the following code in this notebook
+To check that we can use spark with jupyter notebook, let's create a simple notebook ```TestPySparkJupyterNotebook``` in the folder ```C:\Users\your-username\Documents\CS777```. Update the following code in this notebook
 ![windows_install_03](https://github.com/kiat/BigDataAnalytics/blob/master/Installations-HowTos/sceenshots/windows_install_03.PNG)
 
 Now execute all cells **except** the last one with sc.stop()

@@ -3,6 +3,8 @@
 
 Install java JDK on your machine (https://www.oracle.com/java/technologies/downloads/#jdk21-mac)
 
+Important NOTE: Do NOT Use Java 16. Other Java version existing on your system should work fine and you don't have to reinstall
+
 
 java -version
 
@@ -43,7 +45,7 @@ Uncompress it
 
 I have my spark on the following folder 
 
-```/Users/sandeep/spark-3.5.0-bin-hadoop3```
+```/Users/your-username/spark-3.5.0-bin-hadoop3```
 
 # Step-3 -  Setup Enviroment Variables. 
 
@@ -59,13 +61,13 @@ https://medium.com/@sumitmenon/how-to-get-anaconda-to-work-with-oh-my-zsh-on-mac
 
 ```nano .zshrc```
 
-```export SPARK_HOME=/Users/sandeep/spark-3.5.0-bin-hadoop3```
+```export SPARK_HOME=/Users/your-username/spark-3.5.0-bin-hadoop3```
 
 ```export PYTHONPATH=$SPARK_HOME/python:$PYTHONPATH```
 
 Set it to the path where you have your python3 
 
-```export PYSPARK_PYTHON=/Users/sandeep/anaconda3/bin/python3```
+```export PYSPARK_PYTHON=/Users/your-username/anaconda3/bin/python3```
 
 Add Spark bin and sbin folder to the PATH 
 
