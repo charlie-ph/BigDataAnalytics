@@ -4,7 +4,7 @@ from pyspark import SparkContext
 sc = SparkContext("local", "WordCount")
 
 # Read text data and create an RDD
-lines = sc.textFile("..\data\Alices-Adventures-in-Wonderland-by-Lewis-Carroll.txt.bz2")
+lines = sc.textFile("path-to-text-file")
 
 # Tokenize into words
 words = lines.flatMap(lambda line: line.split(" "))

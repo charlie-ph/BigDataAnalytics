@@ -1,5 +1,5 @@
 # Open the file in read mode 
-lines = open("..\data\sample.txt", "r") 
+lines = open("path-to-text-file", "r") 
 
 # Create an empty dictionary 
 word_counts = {} 
